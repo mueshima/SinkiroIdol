@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 
 public class SinkiroManager : MonoBehaviour {
 
@@ -12,51 +13,51 @@ public class SinkiroManager : MonoBehaviour {
     //private Button getSkillButton;
     //private List<string> skillList = new List<string>();
     public Dropdown dropdownDace;    //うつわドロップダウン
-
+    public Boolean bpushFlg;
     //void Awake()
     //{
     //    skillList.Add("不思議な踊り");
     //    skillList.Add("スーパースター");
-        //skillList.Add("鑑定");
-        //skillList.Add("園芸");
-        //skillList.Add("裁縫");
-        //skillList.Add("調合");
-        //skillList.Add("整頓");
-        //skillList.Add("彫金");
-        //skillList.Add("木工");
-        //skillList.Add("鍛治");
-        //skillList.Add("採掘");
-        //skillList.Add("精製");
-        //skillList.Add("水泳");
-        //skillList.Add("錬金");
-        //skillList.Add("合成");
-        //skillList.Add("分解");
-        //skillList.Add("演奏");
-        //skillList.Add("作曲");
-        //skillList.Add("歌唱");
-        //skillList.Add("休憩");
-        //Debug.Log(skillList.Count);
-        //Content取得(ボタンを並べる場所)
-        //content = GameObject.Find("Canvas/ImageBack/Scroll View/Viewport/Content").GetComponent<RectTransform>();
+    //skillList.Add("鑑定");
+    //skillList.Add("園芸");
+    //skillList.Add("裁縫");
+    //skillList.Add("調合");
+    //skillList.Add("整頓");
+    //skillList.Add("彫金");
+    //skillList.Add("木工");
+    //skillList.Add("鍛治");
+    //skillList.Add("採掘");
+    //skillList.Add("精製");
+    //skillList.Add("水泳");
+    //skillList.Add("錬金");
+    //skillList.Add("合成");
+    //skillList.Add("分解");
+    //skillList.Add("演奏");
+    //skillList.Add("作曲");
+    //skillList.Add("歌唱");
+    //skillList.Add("休憩");
+    //Debug.Log(skillList.Count);
+    //Content取得(ボタンを並べる場所)
+    //content = GameObject.Find("Canvas/ImageBack/Scroll View/Viewport/Content").GetComponent<RectTransform>();
 
-        //textPrefab = (GameObject)Resources.Load("Prefabs/ButtonDance");
-        //(ボタンの高さ+ボタン同士の間隔)*ボタン数
+    //textPrefab = (GameObject)Resources.Load("Prefabs/ButtonDance");
+    //(ボタンの高さ+ボタン同士の間隔)*ボタン数
 
-        //float btnSpace = content.GetComponent<VerticalLayoutGroup>().spacing;
+    //float btnSpace = content.GetComponent<VerticalLayoutGroup>().spacing;
 
-        //float btnHeight = textPrefab.GetComponent<LayoutElement>().preferredHeight;
+    //float btnHeight = textPrefab.GetComponent<LayoutElement>().preferredHeight;
 
-        //content.sizeDelta = new Vector2(0, (btnHeight + btnSpace) * 3);
+    //content.sizeDelta = new Vector2(0, (btnHeight + btnSpace) * 3);
 
 
-        //content = GameObject.Find("Content");
-        //textPrefab = (GameObject)Resources.Load("Prefabs/Text");
-        //getSkillButton = transform.GetComponent<Button>();
+    //content = GameObject.Find("Content");
+    //textPrefab = (GameObject)Resources.Load("Prefabs/Text");
+    //getSkillButton = transform.GetComponent<Button>();
     //}
 
     // Use this for initialization
     void Start () {
-
+        bpushFlg = false;
         //うつわ設定
         if (dropdownDace)
         {
@@ -121,9 +122,11 @@ public class SinkiroManager : MonoBehaviour {
 
     public void PushButtonExe()
     {
-        Debug.Log("value = " + dropdownDace.value);  //値を取得（先頭から連番(0～n-1)）
-        Debug.Log("text(options) = " + dropdownDace.options[dropdownDace.value].text);  //リストからテキストを取得
-        Debug.Log("text(captionText) = " + dropdownDace.captionText.text); //Labelからテキストを取得
+        bpushFlg = true ;
+        Debug.Log(bpushFlg);
+        //Debug.Log("value = " + dropdownDace.value);  //値を取得（先頭から連番(0～n-1)）
+        //Debug.Log("text(options) = " + dropdownDace.options[dropdownDace.value].text);  //リストからテキストを取得
+        //Debug.Log("text(captionText) = " + dropdownDace.captionText.text); //Labelからテキストを取得
 
         //if (skillList.Count > 0)
         //{
